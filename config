@@ -38,7 +38,7 @@ bindsym $mod+d exec "rofi -show drun"
 bindsym $mod+Shift+d exec "~/.config/rofi/rofi-bangs.sh"
 
 # Start Applications
-bindsym $mod+c exec alacritty -e nvim /home/filipe/.config/i3/config
+bindsym $mod+c exec alacritty -e nvim ~/.config/i3/config
 
 bindsym $mod+w exec chromium
 
@@ -326,14 +326,10 @@ mode "$mode_gaps_outer" {
 }
 
 # Autostart applications
-
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id openrgb -p purple.orp
+exec --no-startup-id lxsession
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec --no-startup-id nm-applet
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id setxkbmap pt ; setxkbmap -option caps:swapescape
+exec --no-startup-id setxkbmap us
 exec --no-startup-id pa-applet
-exec --no-startup-id optimus-manager-qt
-exec --no-startup-id xset r rate 210 50
+# exec --no-startup-id xset r rate 210 50
